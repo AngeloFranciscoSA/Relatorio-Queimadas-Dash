@@ -9,40 +9,38 @@ class Dados:
         return self.df
 
     def get_estados(self):
+        list_estados = []
 
-        arrayEstados = []
+        df = self.df
+        df = df.groupby(by=['estado']).count().reset_index(['estado']).filter(['estado']).to_numpy()
 
-        temp = self.df
-        temp = temp.groupby(by=['estado']).count().reset_index(['estado']).filter(['estado']).to_numpy()
-
-        for estado in temp:
-            arrayEstados.append(estado[0])
+        for estado in df:
+            list_estados.append(estado[0])
         
-        return arrayEstados
+        return list_estados
 
     def get_paises(self):
-        arrayPais = []
+        list_pais = []
 
-        temp = self.df
-        temp = temp.groupby(by=['pais']).count().reset_index(['pais']).filter(['pais']).to_numpy()
+        df = self.df
+        df = df.groupby(by=['pais']).count().reset_index(['pais']).filter(['pais']).to_numpy()
 
-        for pais in temp:
-            arrayPais.append(pais[0])
+        for pais in df:
+            list_pais.append(pais[0])
 
-        return arrayPais
-
+        return list_pais
 
     def get_dados_estados(self):
-        temp = self.df
-        temp.rename(columns = {"satelite": "ocorrencias"}, inplace = True)
-        return temp.groupby(by=["estado"]).count().filter(["ocorrencias"]).sort_values(by=['ocorrencias'], ascending=False).head(30)
+        df = self.df
+        df.rename(columns = {"satelite": "ocorrencias"}, inplace = True)
+        return df.groupby(by=["estado"]).count().filter(["ocorrencias"]).sort_values(by=['ocorrencias'], ascending=False).head(30)
 
     def get_dados_municipio(self):
-        temp = self.df
-        temp.rename(columns = {"satelite": "ocorrencias"}, inplace = True)
-        return temp.groupby(by=["municipio"]).count().filter(["ocorrencias"]).sort_values(by=['ocorrencias'], ascending=False).head(30)
+        df = self.df
+        df.rename(columns = {"satelite": "ocorrencias"}, inplace = True)
+        return df.groupby(by=["municipio"]).count().filter(["ocorrencias"]).sort_values(by=['ocorrencias'], ascending=False).head(30)
 
     def get_dados_biomas(self):
-        temp = self.df
-        temp.rename(columns = {"satelite": "ocorrencias"}, inplace = True)
-        return temp.groupby(by=["bioma"]).count().filter(["ocorrencias"]).reset_index('bioma')    
+        df = self.df
+        df.rename(columns = {"satelite": "ocorrencias"}, inplace = True)
+        return df.groupby(by=["bioma"]).count().filter(["ocorrencias"]).reset_index('bioma')    
