@@ -8,6 +8,8 @@ Todas essas informações podem ser obtidas de maneira gratuita atras do portal 
 
 # Informações Técnica
 
-O projeto foi realizado em Python 3.6+ e não utiliza nenhuma biblioteca externa.
-
-Ao iniciar, o programa vai pedir algum ID do motoboy, você pode passar de 1 a 5. Caso se passar nada vai mostrar todos, se passar algum expecifico vai retornar somente aquele e se passar algum que não exista vai retorna um erro.
+O projeto foi realizado em Python 3.6+ e utiliza estas bibliotecas externas:
+  * dash = 2.3.1
+  * dash-bootstrap-components = 1.1.0
+  * dash-leaflet = 0.1.23
+  * pandas = 1.4.1  
