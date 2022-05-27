@@ -1,0 +1,31 @@
+*{
+    font-family: "Source Sans Pro"; 
+}
+
+button, a{
+    margin-right: .5rem;
+}
+
+.queimadas, .mapa-mundi{
+    border-radius: 30px;
+    box-shadow: 0px 4px 6px -2px rgba(5, 18, 37, 0.35), 0px 8px 12px -4px rgba(5, 18, 37, 0.35);
+    margin-top: 30px;
+}
+
+.mapa-mundi{
+    height: 100vh !important;
+}
+
+.drop_estados, .drop_pais{
+    width: 70%;
+    margin-left: 15%;
+}
+
+.labels-filtros{
+    background: #F5F5F5;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 10px 10px;
+
+    margin-bottom: 20px;
+    padding: 20px;
+}
