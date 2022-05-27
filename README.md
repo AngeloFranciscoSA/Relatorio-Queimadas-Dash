@@ -10,7 +10,7 @@ Todas essas informações podem ser obtidas de maneira gratuita atras do portal 
 
 # Informações Técnica
 
-O projeto foi realizado em Python 3.6+ e utiliza estas bibliotecas externas:
+O projeto foi realizado em Python 3.8+ e utiliza estas bibliotecas externas:
   * dash = 2.3.1
   * dash-bootstrap-components = 1.1.0
   * dash-leaflet = 0.1.23
