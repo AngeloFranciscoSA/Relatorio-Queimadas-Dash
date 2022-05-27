@@ -4,7 +4,7 @@ Este projeto é um relatório sobre as queimadas disponibilizada no portal do IN
 
 Pode ser acessado por este [link](https://queimadas.dgi.inpe.br/queimadas/bdqueimadas) ou por aqui https://queimadas.dgi.inpe.br/queimadas/bdqueimadas
 
-O objetivo deste projeto é criar um dashboard para exibir informações das queimadas dentro do periodo de 02/05/2022 até 06/05/2022.
+O objetivo deste projeto é criar um dashboard para exibir informações das queimadas dentro do período de 02/05/2022 até 06/05/2022.
 
 Todas essas informações podem ser obtidas de maneira gratuita atras do portal Queimadas.
 
@@ -20,3 +20,7 @@ Para iniciar o projeto basta instalar as bibliotecas e executar o seguinte coman
 ```
  python app.py
 ```
+
+# Procedencia dos dados
+
+Os dados mostradas neste dashbord vem de um arquivo csv que foi retirado do portal DBQueimadas do INPE dentro do período de 02/05/2022 até 06/05/2022.
