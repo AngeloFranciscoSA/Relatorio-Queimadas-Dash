@@ -10,9 +10,9 @@ class Graficos:
         self.dados = Dados()
 
 
-    def getGraficoEstados(self):
+    def get_grafico_estados(self):
         fig = px.bar(
-            self.dados.getDadosEstados(), 
+            self.dados.get_dados_estados(), 
             title="Queimadas por Estados",
             text_auto=True,
             labels={
@@ -26,9 +26,9 @@ class Graficos:
 
         return fig
 
-    def getGraficoMunicipio(self):
+    def get_grafico_municipio(self):
         fig = px.bar(
-            self.dados.getDadosMunicipio(), 
+            self.dados.get_dados_municipio(), 
             title="Queimadas por Municipio",
             text_auto=True,
             labels={
@@ -42,10 +42,10 @@ class Graficos:
 
         return fig
 
-    def getGraficoBiomas(self):
+    def get_grafico_biomas(self):
         
         fig = px.pie(
-            self.dados.getDadosBiomas(), 
+            self.dados.get_dados_biomas(), 
             title="Queimadas por Biomas",
             values="ocorrencias",
             names="bioma",
@@ -54,9 +54,9 @@ class Graficos:
 
         return fig
 
-    def getGraficoMapaMundi(self):
+    def get_grafico_mapa_mundi(self):
 
-        df = self.dados.getDados()
+        df = self.dados.get_dados()
         df = df.drop(['diasemchuva', 'precipitacao', 'frp'] , axis=1)
         cords = []
 

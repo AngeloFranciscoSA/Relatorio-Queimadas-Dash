@@ -20,7 +20,7 @@ layout = html.Div([
                         dbc.Label("Paises:", html_for="paises"),
                         dcc.Dropdown(
                             id='paises',
-                            options = Dados().getPaises(),
+                            options = Dados().get_paises(),
                             multi=True,
                             placeholder="Selecione um País",
                             className="drop_pais"
@@ -33,7 +33,7 @@ layout = html.Div([
                         dbc.Label("Estados:", html_for="estados"),
                         dcc.Dropdown(
                             id='estados',
-                            options = Dados().getEstados(),
+                            options = Dados().get_estados(),
                             multi=True,
                             placeholder="Selecione um Estado",
                             className="drop_estados"

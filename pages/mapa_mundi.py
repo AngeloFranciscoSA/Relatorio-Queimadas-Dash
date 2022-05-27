@@ -8,5 +8,5 @@ layout = html.Div([
                 'textAlign': 'center'
             }
         ),
-        Graficos().getGraficoMapaMundi()
+        Graficos().get_grafico_mapa_mundi()
     ], className="mapa-mundi")

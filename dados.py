@@ -5,10 +5,10 @@ class Dados:
     def __init__(self) -> None:
         self.df = pd.read_csv(filepath_or_buffer='queimadas.csv', delimiter=',')
 
-    def getDados(self):
+    def get_dados(self):
         return self.df
 
-    def getEstados(self):
+    def get_estados(self):
 
         arrayEstados = []
 
@@ -20,7 +20,7 @@ class Dados:
         
         return arrayEstados
 
-    def getPaises(self):
+    def get_paises(self):
         arrayPais = []
 
         temp = self.df
@@ -32,17 +32,17 @@ class Dados:
         return arrayPais
 
 
-    def getDadosEstados(self):
+    def get_dados_estados(self):
         temp = self.df
         temp.rename(columns = {"satelite": "ocorrencias"}, inplace = True)
         return temp.groupby(by=["estado"]).count().filter(["ocorrencias"]).sort_values(by=['ocorrencias'], ascending=False).head(30)
 
-    def getDadosMunicipio(self):
+    def get_dados_municipio(self):
         temp = self.df
         temp.rename(columns = {"satelite": "ocorrencias"}, inplace = True)
         return temp.groupby(by=["municipio"]).count().filter(["ocorrencias"]).sort_values(by=['ocorrencias'], ascending=False).head(30)
 
-    def getDadosBiomas(self):
+    def get_dados_biomas(self):
         temp = self.df
         temp.rename(columns = {"satelite": "ocorrencias"}, inplace = True)
         return temp.groupby(by=["bioma"]).count().filter(["ocorrencias"]).reset_index('bioma')    

@@ -16,12 +16,12 @@ dados = Dados()
     Input('estados', 'value'),
     Input('paises', 'value')
 )   
-def changeGraph(estados, paises):
+def change_graph(estados, paises):
 
     ctx = dash.callback_context
 
     if not ctx.triggered:
-        return defaultGraph()
+        return default_graph()
     
     else:
         action = ctx.triggered[0]['prop_id'].split('.')[0]
@@ -29,20 +29,20 @@ def changeGraph(estados, paises):
         if action == 'estados':
              if estados is not None:
                 if len(estados) != 0:
-                    return handlerEstadoGraph(estados), defaultGraph('municipio')
+                    return handler_estado_graph(estados), default_graph('municipio')
 
         elif action == 'paises':
             if paises is not None:
                 if len(paises) != 0:
-                    return handlerPaisGraph(paises)
+                    return handler_pais_graph(paises)
                 
-        return defaultGraph()
+        return default_graph()
 
 
-def defaultGraph(type = ''):
+def default_graph(type = ''):
 
     Queimadas_Estados = px.bar(
-        dados.getDadosEstados(), 
+        dados.get_dados_estados(), 
         title="Queimadas por Estados",
         text_auto=True,
         labels={
@@ -52,7 +52,7 @@ def defaultGraph(type = ''):
     )
 
     Queimadas_Municipio = px.bar(
-        dados.getDadosMunicipio(), 
+        dados.get_dados_municipio(), 
         title="Queimadas por Municipio",
         text_auto=True,
         labels={
@@ -75,8 +75,8 @@ def defaultGraph(type = ''):
     else:
         return Queimadas_Estados, Queimadas_Municipio, Div_Queimadas_Biomas
 
-def handlerEstadoGraph(estados):
-    temp = dados.getDados()
+def handler_estado_graph(estados):
+    temp = dados.get_dados()
     temp.rename(columns = {"satelite": "ocorrencias"}, inplace = True)
     temp = temp.query('estado == '+str(estados))
     temp = temp.groupby(by=["municipio"]).count().filter(["ocorrencias"]).sort_values(by=['ocorrencias'], ascending=False).head(30)
@@ -95,8 +95,8 @@ def handlerEstadoGraph(estados):
 
     return Queimadas_Estados
 
-def handlerPaisGraph(paises):
-    temp = dados.getDados()
+def handler_pais_graph(paises):
+    temp = dados.get_dados()
     temp.rename(columns = {"satelite": "ocorrencias"}, inplace = True)
     temp = temp.query('pais == '+str(paises))
 

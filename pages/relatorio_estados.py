@@ -19,6 +19,6 @@ layout = html.Div([
     
         dcc.Graph(
             id='Queimadas_Estados',
-            figure=Graficos().getGraficoEstados(),
+            figure=Graficos().get_grafico_estados(),
         )
     ], className="queimadas")

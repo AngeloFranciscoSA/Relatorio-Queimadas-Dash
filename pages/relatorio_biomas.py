@@ -10,6 +10,6 @@ layout = html.Div([
         ),
         dcc.Graph(
             id='Queimadas_Biomas',
-            figure=Graficos().getGraficoBiomas(),
+            figure=Graficos().get_grafico_biomas(),
         )
     ], className="queimadas", id='Div_Queimadas_Biomas')
