@@ -21,6 +21,6 @@ Para iniciar o projeto basta instalar as bibliotecas e executar o seguinte coman
  python app.py
 ```
 
-# Procedencia dos dados
+# Procedência dos dados
 
 Os dados mostradas neste dashbord vem de um arquivo csv que foi retirado do portal DBQueimadas do INPE dentro do período de 02/05/2022 até 06/05/2022.
