@@ -1,4 +1,3 @@
-from click import style
 from dash import Input, Output, State, html, dcc, callback
 from dados import Dados
 import dash_bootstrap_components as dbc
